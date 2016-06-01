@@ -1,0 +1,32 @@
+.canvasDefaults {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.editor {
+
+  &-canvasholder {
+    top: 67px;
+    bottom: 0;
+    right: 30%;
+    left: 0;
+    position: absolute;
+  }
+
+  &-display {
+    @extend .canvasDefaults;
+    z-index: 0;
+  }
+
+  &-drawingboard {
+    @extend .canvasDefaults;
+    z-index: 5;
+
+    > canvas {
+      @extend .canvasDefaults;
+      z-index: 2;
+    }
+  }
+}

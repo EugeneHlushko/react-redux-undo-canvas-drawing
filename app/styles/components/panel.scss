@@ -1,0 +1,79 @@
+@import "../vars.scss";
+
+$size: 66px;
+
+.panel {
+  height: $size;
+  border-bottom: 1px solid $clr_grey_light;
+  position: relative;
+  z-index: 50;
+
+  &-button {
+    width: $size;
+    height: 100%;
+    line-height: $size;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    color: $clr_black;
+    transition: color 100ms linear;
+
+    &.undo {
+      left: 0;
+      border-right: 1px solid $clr_grey_light;
+    }
+
+    &.redo {
+      left: $size+1;
+    }
+
+    &:hover {
+      color: $clr_grey_light;
+    }
+  }
+
+  &-brushpreview {
+    right: 0;
+    height: 100%;
+    width: $size;
+    position: absolute;
+    background: #000;
+    border-left: 1px solid $clr_grey_light;
+    background: url('../../images/photoshop.png') repeat;
+    background-size: 8px;
+
+    &-dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border-radius: 50%;
+    }
+  }
+
+  &-currentcolor {
+    top: 0;
+    width: $size;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    background: #000;
+    right: $size + 1;
+    border-left: 1px solid $clr_grey_light;
+  }
+
+  &-colorpicker {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    right: 0;
+  }
+
+  &-opacity {
+    position: absolute;
+    right: $size + 20;
+    top: 0;
+  }
+}
